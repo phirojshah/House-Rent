@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import ImageSlider from "./ImageSlider";
-// import RoomLocation from "./RoomLocation";
+import RoomLocation from "./RoomLocation";
 
 function Home() {
   return (
     <Container>
       <ImageSlider />
-      {/* <RoomLocation /> */}
+      <RoomLocation />
     </Container>
   );
 }

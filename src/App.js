@@ -4,13 +4,22 @@ import "./App.css";
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import RoomLocation from "./Components/RoomLocation";
+import Login from "./Components/Login";
+import { BrowserRouter, Router, Route, Routes, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Home />
-      <RoomLocation />
+      {/* <Home /> */}
+      {/* <RoomLocation /> */}
+      {/* <Login /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

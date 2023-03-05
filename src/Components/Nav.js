@@ -23,6 +23,11 @@ function Nav() {
           <span> BLOG</span>
         </a>
       </NavMenu>
+      <Login>
+        <a>
+          <span>Login</span>
+        </a>
+      </Login>
       <UsrImg src="/images/profile.jpg " />
     </Container>
   );
@@ -70,7 +75,7 @@ const NavMenu = styled.div`
       &:after {
         content: "";
         height: 2px;
-        background-color: black;
+        background-color: red;
         position: absolute;
         left: 0;
         right: 0;
@@ -94,4 +99,8 @@ const UsrImg = styled.img`
   height: 48px;
   width: 48px;
   border-radius: 50%;
+`;
+
+const Login = styled.div`
+  margin-right: 25px;
 `;
