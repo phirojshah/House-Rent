@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import RoomLocation from "./Components/RoomLocation";
 import Login from "./Components/Login";
 import { BrowserRouter, Router, Route, Routes, Link } from "react-router-dom";
+// import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
         </Routes>
       </BrowserRouter>
+      {/* <Footer /> */}
     </div>
   );
 }
