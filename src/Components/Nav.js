@@ -6,7 +6,7 @@ function Nav() {
     <Container>
       <Logo src="/images/logo.jpg " />
       <NavMenu>
-        <a>
+        <a href="/">
           <span> HOME</span>
         </a>
 
@@ -24,7 +24,7 @@ function Nav() {
         </a>
       </NavMenu>
       <Login>
-        <a>
+        <a href="/Login">
           <span>Login</span>
         </a>
       </Login>
@@ -65,6 +65,8 @@ const NavMenu = styled.div`
     align-items: center;
     padding: 0 10px;
     height: 20px;
+    text-decoration: none;
+    color: black;
 
     span {
       font-size: 15px;
@@ -103,4 +105,8 @@ const UsrImg = styled.img`
 
 const Login = styled.div`
   margin-right: 25px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `;
