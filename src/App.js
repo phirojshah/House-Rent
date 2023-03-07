@@ -3,17 +3,15 @@ import React from "react";
 import "./App.css";
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
-import RoomLocation from "./Components/RoomLocation";
 import Login from "./Components/Login";
 import { BrowserRouter, Router, Route, Routes, Link } from "react-router-dom";
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <div className="App">
       <Nav />
       {/* <Home /> */}
-      {/* <RoomLocation /> */}
       {/* <Login /> */}
       <BrowserRouter>
         <Routes>
@@ -21,7 +19,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
         </Routes>
       </BrowserRouter>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
