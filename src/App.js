@@ -3,14 +3,19 @@ import React from "react";
 import "./App.css";
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
-import RoomLocation from "./Components/RoomLocation";
+import Login from "./Components/Login";
+import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <div className="App">
       <Nav />
-      <Home />
-      <RoomLocation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Login" element={<Login />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
