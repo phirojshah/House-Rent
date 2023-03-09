@@ -28,9 +28,11 @@ function Signup() {
           <div className="signup">
             <input type="submit" value="Create Account" />
           </div>
-          <div className="already_account">Already have an account?</div>
+          <div className="already_account" href="/">
+            Already have an account?
+          </div>
           <div className="login-link">
-            <a href="#">Login</a>
+            <a href="/Login">Login</a>
           </div>
         </div>
       </form>

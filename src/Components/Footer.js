@@ -1,10 +1,17 @@
 import React from "react";
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import styled from "styled-components";
 // import twitter from "./src/twitter.png";
 
 const FooterContainer = styled.div`
   background-color: #2d2d32;
-  /* height: 100%; */
   margin-top: 200px;
 `;
 
@@ -30,6 +37,22 @@ const FooterLinkDiv = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   color: white;
+  button {
+    border-radius: 15px;
+    margin-right: -30px;
+    margin-left: 30px;
+    padding: 9px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border: 2px solid white;
+    background: transparent;
+    transition: 0.5s;
+  }
+  button:hover {
+    background-color: white;
+    color: black;
+  }
 `;
 
 const FooterLink = styled.a`
@@ -46,11 +69,23 @@ const FooterLink = styled.a`
 const SocialMedia = styled.div`
   display: flex;
   flex-direction: row;
+  a {
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    transition: transform 0.4s;
+  }
+  a:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const Input = styled.input`
   margin: 1rem;
   padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
 `;
 
 const BelowFooter = styled.div`
@@ -83,13 +118,6 @@ const Copyright = styled.div`
   font-weight: 600;
   margin-bottom: 3rem;
 `;
-
-// const TwitterIcon = styled.img`
-//   height: 25px;
-//   width: 25px;
-//   margin-right: 10px;
-// `;
-
 export default function Footer() {
   return (
     <FooterContainer>
@@ -117,13 +145,27 @@ export default function Footer() {
           <FooterLinkDiv>
             <h4>Connect With Us</h4>
             <SocialMedia>
-              {/* <p>
-                <TwitterIcon src={twitter} alt="Twitter" />
-                Follow us on Twitter
-              </p> */}
+              <a href="www.facebook.com">
+                <FaFacebook />
+              </a>
+              <a href="www.instagram.com">
+                <FaInstagram />
+              </a>
+              <a href="www.twitter.com">
+                <FaTwitter />
+              </a>
+              <a href="www.github.com">
+                <FaGithub />
+              </a>
+              <a href="www.linkedinIn.com">
+                <FaLinkedinIn />
+              </a>
+              <a href="www.youtube.com">
+                <FaYoutube />
+              </a>
             </SocialMedia>
             <Input type="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
+            <button>SUBSCRIBE</button>
           </FooterLinkDiv>
         </FooterLinks>
         <BelowFooter>
@@ -132,11 +174,11 @@ export default function Footer() {
             <BelowFooterLink href="/privacy">Privacy Policy</BelowFooterLink>
           </BelowFooterLinks>
           <div>
-            <p>© 2023 Company Name. All rights reserved.</p>
+            <p>© 2023 House Rent. All rights reserved.</p>
           </div>
         </BelowFooter>
         <Copyright>
-          <p>Made with ❤️ by Amit Poudyal</p>
+          <p>Made by AAPS.</p>
         </Copyright>
       </FooterWrapper>
     </FooterContainer>

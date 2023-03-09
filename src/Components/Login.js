@@ -28,7 +28,7 @@ function Login() {
         </div>
         <div className="signup-link">
           {" "}
-          <a href="#">Signup now</a>
+          <a href="/Signup">Signup now</a>
         </div>
       </form>
     </div>
