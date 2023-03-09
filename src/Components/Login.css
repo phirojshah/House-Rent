@@ -54,7 +54,7 @@
     position: absolute;
     top: 50%;
     left: 20px;
-    color: #999999;
+    border-color: none;
     font-weight: 400;
     font-size: 17px;
     pointer-events: none;
