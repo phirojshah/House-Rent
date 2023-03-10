@@ -13,10 +13,10 @@ function Nav() {
         <a>
           <span> PROPERTIES</span>
         </a>
-        <a>
+        <a href="/Contact">
           <span> CONTACT</span>
         </a>
-        <a>
+        <a href="/AboutUS">
           <span> ABOUT US</span>
         </a>
         <a>
@@ -60,6 +60,7 @@ const NavMenu = styled.div`
   flex: 1;
   margin-left: 25px;
   align-items: center;
+
   a {
     display: flex;
     align-items: center;

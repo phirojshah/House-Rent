@@ -12,7 +12,7 @@ import styled from "styled-components";
 
 const FooterContainer = styled.div`
   background-color: #2d2d32;
-  margin-top: 200px;
+  /* margin-top: 200px; */
 `;
 
 const FooterWrapper = styled.div`
