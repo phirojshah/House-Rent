@@ -1,32 +1,33 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   return (
     <Container>
       <Logo src="/images/logo.jpg " />
       <NavMenu>
-        <a href="/">
+        <NavLink to="/">
           <span> HOME</span>
-        </a>
+        </NavLink>
 
-        <a>
+        <NavLink>
           <span> PROPERTIES</span>
-        </a>
-        <a href="/Contact">
+        </NavLink>
+        <NavLink to="/Contact">
           <span> CONTACT</span>
-        </a>
-        <a href="/AboutUS">
+        </NavLink>
+        <NavLink to="/AboutUS">
           <span> ABOUT US</span>
-        </a>
-        <a>
+        </NavLink>
+        <NavLink>
           <span> BLOG</span>
-        </a>
+        </NavLink>
       </NavMenu>
       <Login>
-        <a href="/Login">
+        <NavLink to="/Login">
           <span>Login</span>
-        </a>
+        </NavLink>
       </Login>
       <UsrImg src="/images/profile.jpg " />
     </Container>

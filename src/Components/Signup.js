@@ -1,5 +1,6 @@
 import React from "react";
 import "./Signup.css";
+import { NavLink } from "react-router-dom";
 function Signup() {
   return (
     <div className="wrapper">
@@ -31,8 +32,10 @@ function Signup() {
           <div className="already_account" href="/">
             Already have an account?
           </div>
-          <div className="login-link">
-            <a href="/Login">Login</a>
+          <div>
+            <NavLink className="login-link" to="/Login">
+              Login
+            </NavLink>
           </div>
         </div>
       </form>

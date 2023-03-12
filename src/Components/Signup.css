@@ -15,7 +15,7 @@
     margin-top: 20px;
     position: relative;
   }
-  .login-link a{
+  .login-link {
     color: green;
     text-decoration: none;
   }
