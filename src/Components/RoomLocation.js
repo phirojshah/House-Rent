@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
+import Roomdescription from "./Roomdescription";
+import { NavLink } from "react-router-dom";
 function Viewers() {
   return (
     <>
@@ -13,19 +14,24 @@ function Viewers() {
       </Text>
       <Container>
         <Wrap>
-          <img src="/images/slide-img1.jpg" alt="viewerImg" />
+          <img src="/images/slide-img3.jpg" alt="viewerImg" />
+          <NavLink to="/Roomdescription">Learn More</NavLink>
         </Wrap>
         <Wrap>
           <img src="/images/slide-img2.jpg" alt="viewerImg" />
+          <NavLink to="/Roomdescription">Learn More</NavLink>
         </Wrap>
         <Wrap>
           <img src="/images/slide-img3.jpg" alt="viewerImg" />
+          <NavLink to="/Roomdescription">Learn More</NavLink>
         </Wrap>
         <Wrap>
           <img src="/images/slide-img5.jpg" alt="viewerImg" />
+          <NavLink to="/Roomdescription">Learn More</NavLink>
         </Wrap>
         <Wrap>
           <img src="/images/slide.img4.jpg" alt="viewerImg" />
+          <NavLink to="/Roomdescription">Learn More</NavLink>
         </Wrap>
       </Container>
     </>

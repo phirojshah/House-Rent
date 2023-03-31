@@ -5,7 +5,9 @@ import { NavLink } from "react-router-dom";
 function Nav() {
   return (
     <Container>
-      <Logo src="/images/logo.jpg " />
+      <NavLink to="/">
+        <Logo src="/images/logo.jpg " />
+      </NavLink>
       <NavMenu>
         <NavLink to="/">
           <span> HOME</span>

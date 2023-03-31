@@ -1,0 +1,65 @@
+.Location_icon{
+    display:flex;
+    align-items: center;
+    padding-left: 180px;
+  }
+  
+  .image_container{
+    margin-left: 50px;
+    height: 50%;
+    width: 100%;
+    padding-bottom: 250px;
+  }
+  
+  .photo{
+    width: 50%;
+    height: 500px;
+    display: inline-block;
+  }
+  
+  .google_maps{
+    display: inline-block;
+    width: 50%;
+    margin-left: 20px;
+    height: 500px;
+  }
+  
+  .description{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  
+  .info{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .property-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .property-list li {
+    list-style: none;
+    margin-right: 20px;
+  }
+  
+  .Location_text{
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .google_maps{
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    padding-bottom: 0;
+    padding-left: 900px;
+   
+  }
+  
