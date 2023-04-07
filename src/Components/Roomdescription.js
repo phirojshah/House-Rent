@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./roomdescription.css";
+import "./Roomdescription.css";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 function Roomdescription() {

@@ -13,7 +13,7 @@ function Nav() {
           <span> HOME</span>
         </NavLink>
 
-        <NavLink>
+        <NavLink to="/Properties">
           <span> PROPERTIES</span>
         </NavLink>
         <NavLink to="/Contact">
@@ -22,7 +22,7 @@ function Nav() {
         <NavLink to="/AboutUS">
           <span> ABOUT US</span>
         </NavLink>
-        <NavLink>
+        <NavLink to="/Blog">
           <span> BLOG</span>
         </NavLink>
       </NavMenu>

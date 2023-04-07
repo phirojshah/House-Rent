@@ -1,0 +1,15 @@
+/* .properties_name {
+    display: flex;
+  }
+  
+  .properties_name h3 {
+    margin-right: 10px;
+  }
+  
+
+   */
+
+   .properties_name{
+    display: flex;
+    flex-direction: row;
+   }
