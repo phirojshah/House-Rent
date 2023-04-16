@@ -6,5 +6,8 @@ const connectToMongo=()=>{
     mongoose.connect(mongoURI, ()=>{
         console.log("Connected to mongo Successfully");
     })
+    .catch((e)=>{
+        console.log('Error:',e);
+    })
 }
 module.exports= connectToMongo;
