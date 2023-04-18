@@ -11,6 +11,11 @@ const RoomdescSchema = new Schema({
     phonenumber: {
         type: Number,
         required: true
+    },
+    date: {
+        type: Date,
+        default: Date.now()
     }
+
 });
 module.exports = mongoose.model('roomdesc', RoomdescSchema); 
