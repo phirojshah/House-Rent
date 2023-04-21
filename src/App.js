@@ -10,6 +10,8 @@ import Signup from "./Components/Signup";
 import AboutUs from "./Components/AboutUs";
 import ContactUs from "./Components/ContactUs";
 import Roomdescription from "./Components/Roomdescription";
+import Blogs from "./Components/Blogs";
+import Properties from "./Components/Properties";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/Contact" element={<ContactUs />} />
         <Route path="/Roomdescription" element={<Roomdescription />} />
+        <Route path="/Blogs" element={<Blogs />} />
+        <Route path="/Properties" element={<Properties />} />
       </Routes>
       <Footer />
     </div>
