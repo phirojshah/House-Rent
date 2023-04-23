@@ -23,13 +23,13 @@ function Roomdescription() {
         <div className="image_container">
           <Slider {...settings}>
             <div>
-              <img className="photo" src="/images/slide-img1.jpg" />
+              <img className="photo" src="/images/slide-img1.jpg" alt="lol" />
             </div>
             <div>
-              <img className="photo" src="/images/slide-img2.jpg" />
+              <img className="photo" src="/images/slide-img2.jpg" alt="lol" />
             </div>
             <div>
-              <img className="photo" src="/images/slide-img3.jpg" />
+              <img className="photo" src="/images/slide-img3.jpg" alt="lol" />
             </div>
           </Slider>
         </div>

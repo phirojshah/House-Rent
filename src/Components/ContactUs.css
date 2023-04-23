@@ -8,10 +8,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(E:\New folder\House-Rent\public\images\contact.jpg); 
+    background: url(E:\project\House-Rent\public\images\contact.jpg); 
     background-size: cover;
 }
-
+public\images\contact.jpg
 .contact .contentss {
     max-width: 800px;
     text-align: center;
