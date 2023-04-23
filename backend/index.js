@@ -8,7 +8,6 @@ app.use(express.json())
 app.use('/api/auth',require('./routes/auth'))
 app.use('/api/roomdesc',require('./routes/roomdesc'))
 
-
 app.listen(port, () => {
   console.log(`House-Rent backend running at http://localhost:${port}`)
 })

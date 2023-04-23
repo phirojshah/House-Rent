@@ -4,8 +4,6 @@ const router = express.Router()
 const { body, validationResult } = require('express-validator');
 const fetchuser = require('../middleware/fetchuser');
 
-
-
 //ROUTE 1: Get all the roomdescriptions that a user posted using:GET "/api/roomdesc/fetchdesc" Login Required
 router.get('/fetchdesc', fetchuser, async (req, res) => {
     try {
@@ -42,5 +40,48 @@ router.post('/adddesc', fetchuser, [
     }
 
 })
+//ROUTE 3: Update an existing roomdesc using: PUT "/api/roomdesc/updatedesc"
+router.put('/updatedesc/:id', fetchuser, [], async (req, res) => {
+    const { place, description, phonenumber } = req.body;
+    try{
+    //create a newDesc object
+    const newDesc = {};
+    if (place) { newDesc.place = place };
+    if (description) { newDesc.description = description };
+    if (phonenumber) { newDesc.phonenumber = phonenumber };
 
+    //Find the descriptions to be updated and uodate it
+    let roomdesc = await Roomdesc.findById(req.params.id);
+    if (!roomdesc) {
+        return res.status(404).send("Not Found");
+    }
+    if (roomdesc.user.toString() !== req.user.id) {
+        return res.status(401).send("Not Allowed");
+    }
+    roomdesc = await Roomdesc.findByIdAndUpdate(req.params.id, { $set: newDesc }, { new: true })
+    res.json({ roomdesc });
+} catch (error) {
+    console.error(error.message);
+    res.status(500).send("Internal Server Error");
+}
+})
+//ROUTE 4: Delete an existing roomdesc using: DELETE "/api/roomdesc/deletedesc"
+router.delete('/deletedesc/:id', fetchuser, [], async (req, res) => {
+    try{
+    //Find the descriptions to be deleted and delete it
+    let roomdesc = await Roomdesc.findById(req.params.id);
+    if (!roomdesc) {
+        return res.status(404).send("Not Found");
+    }
+    //allow deletion only if user owns this desc
+    if (roomdesc.user.toString() !== req.user.id) {
+        return res.status(401).send("Not Allowed");
+    }
+    roomdesc = await Roomdesc.findByIdAndDelete(req.params.id)
+    res.json({ "Success": "Description has been deleted",roomdesc:roomdesc  });
+}catch(error){
+    console.error(error.message);
+    res.status(500).send("Internal Server Error");
+}
+})
 module.exports = router;

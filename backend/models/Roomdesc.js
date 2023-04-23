@@ -23,4 +23,4 @@ const RoomdescSchema = new Schema({
     }
 
 });
-module.exports = mongoose.model('roomdescde', RoomdescSchema); 
+module.exports = mongoose.model('roomdesc', RoomdescSchema); 

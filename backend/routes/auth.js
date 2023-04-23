@@ -45,7 +45,7 @@ router.post('/createuser', [
         //used jsonwebtoken to compare the data given and the password
         const authtoken = jwt.sign(data, JWT_SECRET);
         success = true;
-        res.json(success, authtoken);
+        res.json({success, authtoken});
 
     } catch (error) {
         console.error(error.message);
