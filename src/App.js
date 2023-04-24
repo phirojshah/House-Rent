@@ -12,6 +12,7 @@ import ContactUs from "./Components/ContactUs";
 import Roomdescription from "./Components/Roomdescription";
 import Blogs from "./Components/Blogs";
 import Properties from "./Components/Properties";
+import Reset from "./Components/Reset";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Roomdescription" element={<Roomdescription />} />
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/Properties" element={<Properties />} />
+        <Route path="/Reset" element={<Reset />} />
       </Routes>
       <Footer />
     </div>
