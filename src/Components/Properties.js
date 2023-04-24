@@ -2,6 +2,10 @@ import React from "react";
 import "./Properties.css";
 import "typeface-roboto";
 import Product from "./Product.js";
+import { Provider } from "react-redux";
+import { getProduct } from "../actions/productAction";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 const product = {
   place: "Pani tanki",
@@ -14,20 +18,18 @@ const product = {
   _id: "1",
 };
 const Properties = () => {
+  const dispatch = useDispatch();
+  const { loading, error, products, productsCount } = useSelector(
+    (state) => state.products
+  );
+  useEffect(() => {
+    dispatch(getProduct());
+  }, [dispatch]);
   return (
     <>
       <h2 className="header">Latest Rooms Near You</h2>
       <div className="container" id="container">
-        <Product product={product} />
-        <Product product={product} />
-
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
+        {products && products.map((product) => <Product product={product} />)}
       </div>
     </>
   );
