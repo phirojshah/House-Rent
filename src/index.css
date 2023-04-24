@@ -1,6 +1,7 @@
 body {
   margin: 0;
   direction: ltr;
+  overflow-x: hidden;
 
   font-family: "Manrope";
   font-size: 20px;

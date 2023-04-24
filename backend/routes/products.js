@@ -3,7 +3,10 @@ const router = express.Router();
 const Product = require("../models/productModels");
 const ApiFeatures = require("../utils/apifeatures");
 
+<<<<<<< HEAD
 //ROUTE 1: Creating a product using : POST api/products/createproduct
+=======
+>>>>>>> 060a1add743bbc69817e70d9c90c5274fc2ec1cc
 router.post("/createproduct", async (req, res) => {
   const product = await Product.create(req.body);
 
