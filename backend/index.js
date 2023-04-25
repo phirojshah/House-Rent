@@ -7,7 +7,6 @@ app.use(express.json());
 //Available Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/roomdesc", require("./routes/roomdesc"));
-// app.use("/api/v1", product);
 app.use("/api/products", require("./routes/products"));
 
 app.listen(port, () => {

@@ -2,10 +2,11 @@ import React from "react";
 import "./Properties.css";
 import "typeface-roboto";
 import Product from "./Product.js";
-import { useContext } from "react";
-import roomcontext from "../Context/roomdesc/roomcontext";
+import { Provider } from "react-redux";
+import { getProduct } from "../actions/productAction";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import styled from "styled-components";
-
 
 const product = {
   place: "Pani tanki",
@@ -18,16 +19,16 @@ const product = {
   _id: "1",
 };
 const Properties = () => {
-  
   return (
     <>
     <Button>
     <button className="post">Post +</button>
     </Button>
       <h2 className="header">Latest Rooms Near You</h2>
-      <div className="container" id="ccontainer">
+      <div className="container" id="container">
         <Product product={product} />
         <Product product={product} />
+
         <Product product={product} />
         <Product product={product} />
         <Product product={product} />

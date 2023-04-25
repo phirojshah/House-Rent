@@ -1,26 +1,37 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const RoomdescSchema = new Schema({
-    user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
-    },
-    place: {
+  place: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: String,
+    required: true,
+  },
+  images: [
+    {
+      public_id: {
         type: String,
-        required: true
-    },
-    description: {
+        required: true,
+      },
+      url: {
         type: String,
-        required: true
+        required: true,
+      },
     },
-    phonenumber: {
-        type: Number,
-        required: true
-    },
-    date: {
-        type: Date,
-        default: Date.now()
-    }
-
+  ],
+  phonenumber: {
+    type: Number,
+    required: true,
+  },
+  date: {
+    type: Date,
+    default: Date.now(),
+  },
 });
-module.exports = mongoose.model('roomdesc', RoomdescSchema); 
+module.exports = mongoose.model("roomdesc", RoomdescSchema);
