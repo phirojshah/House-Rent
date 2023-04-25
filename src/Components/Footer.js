@@ -39,8 +39,8 @@ const FooterLinkDiv = styled.div`
   color: white;
   button {
     border-radius: 15px;
-    margin-right: -30px;
-    margin-left: 30px;
+    margin-right: -20px;
+    margin-left: 25px;
     padding: 9px;
     color: white;
     font-size: 15px;

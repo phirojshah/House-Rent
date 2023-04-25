@@ -2,6 +2,10 @@ import React from "react";
 import "./Properties.css";
 import "typeface-roboto";
 import Product from "./Product.js";
+import { useContext } from "react";
+import roomcontext from "../Context/roomdesc/roomcontext";
+import styled from "styled-components";
+
 
 const product = {
   place: "Pani tanki",
@@ -14,13 +18,16 @@ const product = {
   _id: "1",
 };
 const Properties = () => {
+  
   return (
     <>
+    <Button>
+    <button className="post">Post +</button>
+    </Button>
       <h2 className="header">Latest Rooms Near You</h2>
-      <div className="container" id="container">
+      <div className="container" id="ccontainer">
         <Product product={product} />
         <Product product={product} />
-
         <Product product={product} />
         <Product product={product} />
         <Product product={product} />
@@ -34,3 +41,19 @@ const Properties = () => {
 };
 
 export default Properties;
+
+
+const Button= styled.div`
+button{
+width: 100px;
+background: #00bcd4;
+color: #fff;
+border: none;
+cursor: pointer;
+padding: 10px;
+font-size: 18px;
+border-radius: 10px;
+margin-left:105rem;
+margin-top:20px;
+}
+`

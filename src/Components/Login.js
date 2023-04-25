@@ -21,7 +21,7 @@ function Login() {
             <label htmlFor="remember-me">Remember me</label>
           </div>
           <div className="pass-link">
-            <a href="#">Forgot password?</a>
+            <a href="/">Forgot password?</a>
           </div>
         </div>
         <div className="field">

@@ -4,7 +4,6 @@ const Product = require("../models/productModels");
 
 router.post("/createproduct", async (req, res) => {
   const product = await Product.create(req.body);
-
   res.status(201).json({
     success: true,
     product,

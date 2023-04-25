@@ -58,7 +58,7 @@ function Roomdescription() {
           ></iframe>
         </div>
         <div className="description">
-          <h1>
+          <h4>
             All our guestrooms are elegantly furnished with handmade furniture
             include luxury en-suite facilities with complimentary amenities
             pack, flat screen LCD TV, tea/coffee making facilities, fan,
@@ -71,7 +71,7 @@ function Roomdescription() {
             with complimentary amenities pack, flat screen LCD TV, tea/coffee
             making facilities, fan, hairdryer and the finest pure white linen
             and towels.
-          </h1>
+          </h4>
         </div>
       </div>
     </>

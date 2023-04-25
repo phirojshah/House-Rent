@@ -7,16 +7,16 @@ function Signup() {
       <div className="title">Sign Up</div>
       <form action="#">
         <div className="field">
-          <input type="text" required />
+          <input type="text" id="name" required />
           <label>Name</label>
         </div>
 
         <div className="field">
-          <input type="text" required />
+          <input type="text" id="email" required />
           <label>Email Address</label>
         </div>
         <div className="field">
-          <input type="number" required />
+          <input type="number" required minLength={10} id="cnumber"/>
           <label>Contact Number</label>
         </div>
         <div className="Dob">
@@ -24,7 +24,7 @@ function Signup() {
         </div>
 
         <div className="field">
-          <input type="password" required />
+          <input type="password" name="password" id="password" required />
           <label>Password</label>
           <div className="signup">
             <input type="submit" value="Create Account" />

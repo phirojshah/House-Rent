@@ -12,10 +12,12 @@ import ContactUs from "./Components/ContactUs";
 import Roomdescription from "./Components/Roomdescription";
 import Blogs from "./Components/Blogs";
 import Properties from "./Components/Properties";
+import RoomState from "./Context/roomdesc/Roomstate";
 
 function App() {
   return (
     <div className="App">
+      <RoomState>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,6 +30,7 @@ function App() {
         <Route path="/Properties" element={<Properties />} />
       </Routes>
       <Footer />
+      </RoomState>
     </div>
   );
 }
