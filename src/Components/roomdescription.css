@@ -31,7 +31,9 @@
     flex-direction: column;
     margin-top: 30px;
   }
-  
+  .description h3{
+    box-sizing: border-box;
+  }
   .info{
     margin-top: 10px;
     display: flex;

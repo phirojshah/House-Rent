@@ -13,10 +13,12 @@ import Roomdescription from "./Components/Roomdescription";
 import Blogs from "./Components/Blogs";
 import Properties from "./Components/Properties";
 import Reset from "./Components/Reset";
+import RoomState from "./Context/roomdesc/Roomstate";
 
 function App() {
   return (
     <div className="App">
+    <RoomState>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,6 +32,7 @@ function App() {
         <Route path="/Reset" element={<Reset />} />
       </Routes>
       <Footer />
+      </RoomState>
     </div>
   );
 }
