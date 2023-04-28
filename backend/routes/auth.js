@@ -54,22 +54,23 @@ app.post(
       const salt = await bcrypt.genSalt(10);
       const secpassword = await bcrypt.hash(req.body.password, salt);
 
-      //this will wait and create a new user
-      user = await User.create({
-        name: req.body.name,
-        contact: req.body.contact,
-        email: req.body.email,
-        password: secpassword,
-      });
-      const data = {
-        user: {
-          id: user.id,
-        },
-      };
-      //used jsonwebtoken to compare the data given and the password
-      const authtoken = jwt.sign(data, JWT_SECRET);
-      success = true;
-      res.json({ success, authtoken });
+        //this will wait and create a new user
+        user = await User.create({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            password: secpassword
+        })
+        const data = {
+            user: {
+                id: user.id
+            }
+        }
+        //used jsonwebtoken to compare the data given and the password
+        const authtoken = jwt.sign(data, JWT_SECRET);
+        success = true;
+        res.json({success, authtoken});
+
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");

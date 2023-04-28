@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Roomdescription from "./Roomdescription";
 import { NavLink } from "react-router-dom";
 function Viewers() {
   return (

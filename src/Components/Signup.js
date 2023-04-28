@@ -50,21 +50,11 @@ function Signup() {
         </div>
 
         <div className="field">
-          <input
-            type="text"
-            required
-            value={email}
-            onChange={(ev) => setEmail(ev.target.value)}
-          />
+          <input type="text" required />
           <label>Email Address</label>
         </div>
         <div className="field">
-          <input
-            type="number"
-            required
-            value={contact}
-            onChange={(ev) => setContact(ev.target.value)}
-          />
+          <input type="number" required />
           <label>Contact Number</label>
         </div>
         <div className="Dob">
@@ -80,12 +70,7 @@ function Signup() {
         </div>
 
         <div className="field">
-          <input
-            type="password"
-            required
-            value={password}
-            onChange={(ev) => setPassword(ev.target.value)}
-          />
+          <input type="password" required />
           <label>Password</label>
 
           <div className="field">
