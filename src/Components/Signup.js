@@ -10,7 +10,6 @@ function Signup() {
   const [contact, setContact] = useState("");
   // const [dob, setDob] = useState("");
   const [password, setPassword] = useState("");
-  const [img, setImage] = useState("");
 
   const [redirect, setRedirect] = useState(false);
 
@@ -22,7 +21,6 @@ function Signup() {
         email,
         contact,
         password,
-        img,
       });
       alert("Registration successful. Now you can log in");
       setRedirect(true);
@@ -38,7 +36,7 @@ function Signup() {
   return (
     <div className="wrapper">
       <div className="title">Sign Up</div>
-      <form onSubmit={registerUser} enctype="multipart/form-data" method="post">
+      <form onSubmit={registerUser}>
         <div className="field">
           <input
             type="text"
@@ -72,16 +70,6 @@ function Signup() {
         <div className="field">
           <input type="password" required />
           <label>Password</label>
-
-          <div className="field">
-            <input
-              type="file"
-              class="form-control-file"
-              name="uploaded_file"
-              value={img}
-              onChange={(ev) => setImage(ev.target.value)}
-            />
-          </div>
 
           <div className="signup">
             <input type="submit" value="Create Account" />

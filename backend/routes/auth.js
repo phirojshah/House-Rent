@@ -1,23 +1,21 @@
 const express = require("express");
 const cors = require("cors");
 const User = require("../models/User");
-const app = express();
+const router = express();
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 var nodemailer = require("nodemailer");
 require("dotenv").config();
-const multer = require("multer");
-const fs = require("fs");
 
-app.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: false }));
+router.set("view engine", "ejs");
+router.use(express.urlencoded({ extended: false }));
 
 const JWT_SECRET = "shjh";
 
-app.use(express.json());
-app.use(
+router.use(express.json());
+router.use(
   cors({
     credentials: true,
     origin: "http://localhost:3000",
@@ -25,7 +23,7 @@ app.use(
 );
 
 //ROUTE 1:Create a User using: POST '/api/auth/createuser'.No Login required
-app.post(
+router.post(
   "/createuser",
   [
     body("name", "Enter a valid first name").isLength({ min: 3 }),
@@ -79,7 +77,7 @@ app.post(
 );
 
 // ROUTE 2:Authenticate a User using: POST '/api/auth/login'.No Login required
-app.post(
+router.post(
   "/login",
   [
     body("email", "Enter a valid E-mail").isEmail(),
@@ -124,7 +122,7 @@ app.post(
   }
 );
 //ROUTE 3: Get Logged in user details using:POST '/api/auth/getuser' Login required
-app.post("/getuser", fetchuser, async (req, res) => {
+router.post("/getuser", fetchuser, async (req, res) => {
   try {
     const userId = req.user.id;
     const user = await User.findById(userId).select("-password");
@@ -136,7 +134,7 @@ app.post("/getuser", fetchuser, async (req, res) => {
 });
 
 //Reset password code starts from here
-app.post("/forgot-password", async (req, res) => {
+router.post("/forgot-password", async (req, res) => {
   const { email } = req.body;
   try {
     const oldUser = await User.findOne({ email });
@@ -177,7 +175,7 @@ app.post("/forgot-password", async (req, res) => {
   }
 });
 
-app.get("/reset-password/:id/:token", async (req, res) => {
+router.get("/reset-password/:id/:token", async (req, res) => {
   const { id, token } = req.params;
   console.log(req.params);
   const oldUser = await User.findOne({ _id: id });
@@ -194,7 +192,7 @@ app.get("/reset-password/:id/:token", async (req, res) => {
   }
 });
 
-app.post("/reset-password/:id/:token", async (req, res) => {
+router.post("/reset-password/:id/:token", async (req, res) => {
   const { id, token } = req.params;
   const { password } = req.body;
 
@@ -225,40 +223,4 @@ app.post("/reset-password/:id/:token", async (req, res) => {
 
 //Reset password code Ended here
 
-//Multer code started
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads");
-  },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
-  },
-});
-
-const upload = multer({ storage: storage });
-
-app.post("/createuser", upload.single("testImage"), (req, res) => {
-  const saveImage = User({
-    name: req.body.name,
-    img: {
-      data: fs.readFileSync("uploads/" + req.file.filename),
-      contentType: "image/png",
-    },
-  });
-  saveImage
-    .save()
-    .then((res) => {
-      console.log("image is saved");
-    })
-    .catch((err) => {
-      console.log(err, "error has occur");
-    });
-  res.send("image is saved");
-});
-
-app.get("/", async (req, res) => {
-  const allData = await User.find();
-  res.json(allData);
-});
-
-module.exports = app;
+module.exports = router;
