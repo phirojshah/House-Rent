@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { getProduct } from "../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import styled from "styled-components";
 
 const product = {
   place: "Pani tanki",
@@ -18,21 +19,42 @@ const product = {
   _id: "1",
 };
 const Properties = () => {
-  const dispatch = useDispatch();
-  const { loading, error, products, productsCount } = useSelector(
-    (state) => state.products
-  );
-  useEffect(() => {
-    dispatch(getProduct());
-  }, [dispatch]);
   return (
     <>
+    <Button>
+    <button className="post">Post +</button>
+    </Button>
       <h2 className="header">Latest Rooms Near You</h2>
       <div className="container" id="container">
-        {products && products.map((product) => <Product product={product} />)}
+        <Product product={product} />
+        <Product product={product} />
+
+        <Product product={product} />
+        <Product product={product} />
+        <Product product={product} />
+        <Product product={product} />
+        <Product product={product} />
+        <Product product={product} />
+        <Product product={product} />
       </div>
     </>
   );
 };
 
 export default Properties;
+
+
+const Button= styled.div`
+button{
+width: 100px;
+background: #00bcd4;
+color: #fff;
+border: none;
+cursor: pointer;
+padding: 10px;
+font-size: 18px;
+border-radius: 10px;
+margin-left:105rem;
+margin-top:20px;
+}
+`

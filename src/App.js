@@ -19,10 +19,12 @@ import AdminProperties from "./admin/Pages/AdminProperties";
 import Users from "./admin/Pages/Users";
 import Dashboard from "./admin/Pages/Dashboard";
 import { Space } from "antd";
+import RoomState from "./Context/roomdesc/Roomstate";
 
 function App() {
   return (
     <div className="App">
+    <RoomState>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -39,6 +41,7 @@ function App() {
         <Route path="/adminproperties" element={<AdminProperties />} />
       </Routes>
       <Footer />
+      </RoomState>
     </div>
   );
 }

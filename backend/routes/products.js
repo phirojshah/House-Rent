@@ -6,7 +6,6 @@ const ApiFeatures = require("../utils/apifeatures");
 //ROUTE 1: Creating a product using : POST api/products/createproduct
 router.post("/createproduct", async (req, res) => {
   const product = await Product.create(req.body);
-
   res.status(201).json({
     success: true,
     product,
