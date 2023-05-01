@@ -8,7 +8,6 @@ const jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 var nodemailer = require("nodemailer");
 require("dotenv").config();
-
 router.set("view engine", "ejs");
 router.use(express.urlencoded({ extended: false }));
 
@@ -27,11 +26,9 @@ router.post(
   "/createuser",
   [
     body("name", "Enter a valid first name").isLength({ min: 3 }),
-    body("contact", "Enter a valid last name").isLength({ min: 3 }),
+    body("contact", "Enter a valid Contact Number").isLength({ min: 10 }),
     body("email", "Enter a valid E-mail").isEmail(),
-    body("password", "Password must be at least 5 characters").isLength({
-      min: 5,
-    }),
+    body("password", "Password must be at least 5 characters").isLength({ min: 5,}),
   ],
   async (req, res) => {
     //if there are errors return bad request and errors
@@ -54,8 +51,8 @@ router.post(
 
         //this will wait and create a new user
         user = await User.create({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
+            name: req.body.name,
+            contact: req.body.contact,
             email: req.body.email,
             password: secpassword
         })
@@ -181,12 +178,12 @@ router.get("/reset-password/:id/:token", async (req, res) => {
   const oldUser = await User.findOne({ _id: id });
   if (!oldUser) {
     return res.json({ status: "User Not Exists!!" });
-  }
+  } 
   const secret = JWT_SECRET + oldUser.password;
   try {
     const verify = jwt.verify(token, secret);
-    res.render("index", { email: verify.email, status: "Not Verified" });
-  } catch (error) {
+    res.render("./views/index", { email: verify.email, status: "Not Verified" });
+  } catch (error) { 
     console.log(error);
     res.send("Not Verified");
   }
