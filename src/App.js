@@ -13,6 +13,12 @@ import Roomdescription from "./Components/Roomdescription";
 import Blogs from "./Components/Blogs";
 import Properties from "./Components/Properties";
 import Reset from "./Components/Reset";
+import SideMenu from "./admin/SideMenu";
+import PageContent from "./admin/PageContent";
+import AdminProperties from "./admin/Pages/AdminProperties";
+import Users from "./admin/Pages/Users";
+import Dashboard from "./admin/Pages/Dashboard";
+import { Space } from "antd";
 import RoomState from "./Context/roomdesc/Roomstate";
 
 function App() {
@@ -30,6 +36,9 @@ function App() {
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/Properties" element={<Properties />} />
         <Route path="/Reset" element={<Reset />} />
+        <Route path="/admindashboard" element={<Dashboard />} />
+        <Route path="/adminusers" element={<Users />} />
+        <Route path="/adminproperties" element={<AdminProperties />} />
       </Routes>
       <Footer />
       </RoomState>
